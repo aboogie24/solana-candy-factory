@@ -2,11 +2,11 @@
 rm -rf ./.cache/devnet-temp
 pwd
 echo "[INFO] Uploading all resources"
-ts-node /root/candy-machine-mint/src/candy-machine.ts upload ./nfts-sources --env devnet --keypair ~/.config/solana/candyfactory-devnet.json
+ts-node ~/metaplex/js/packages/cli/src/candy-machine-v1-cli.ts upload ./nfts-sources --env devnet --keypair ~/.config/solana/candyfactory-devnet.json
 echo "[INFO] Creating candy machine"
-ts-node /root/candy-machine-mint/src/candy-machine.ts create_candy_machine --env devnet --keypair ~/.config/solana/candyfactory-devnet.json --price 0.01 > ./logs/dev/candy-machine-log.txt
+ts-node ~/metaplex/js/packages/cli/src/candy-machine-v1-cli.ts create_candy_machine --env devnet --keypair ~/.config/solana/candyfactory-devnet.json --price 0.01 > ./logs/dev/candy-machine-log.txt
 echo "[INFO] Setting minting start date (goLiveDate)"
-ts-node /root/candy-machine-mint/src/candy-machine.ts update_candy_machine -d "16 Sep 2021 00:00:00 UTC" --env devnet --keypair ~/.config/solana/candyfactory-devnet.json > ./logs/dev/candy-machine-start-date.txt
+ts-node ~/metaplex/js/packages/cli/src/candy-machine-v1-cli.ts update_candy_machine -d "16 Sep 2021 00:00:00 UTC" --env devnet --keypair ~/.config/solana/candyfactory-devnet.json > ./logs/dev/candy-machine-start-date.txt
 
 
 
